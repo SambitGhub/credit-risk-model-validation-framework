@@ -67,11 +67,11 @@ pip install -r requirements.txt
 ```
 
 ### 2. Download Dataset
-Download the [Give Me Some Credit](https://www.kaggle.com/c/GiveMeSomeCredit/data) dataset and place `cs-training.csv` in `data/raw/`.
+Download the [Home Credit Default Risk](https://www.kaggle.com/c/home-credit-default-risk/data) dataset and place `application_train.csv` in `data/raw/`.
 
 ```bash
 # If you have Kaggle CLI configured:
-kaggle competitions download -c GiveMeSomeCredit -p data/raw/
+kaggle competitions download -c home-credit-default-risk -p data/raw/
 ```
 
 ### 3. Run the Full Pipeline
@@ -92,18 +92,18 @@ This will execute the complete pipeline:
 ## 📈 Key Methodologies
 
 ### Weight of Evidence (WOE) & Information Value (IV)
-$$WOE_i = \ln\left(\frac{\% \text{Events}_i}{\% \text{Non-Events}_i}\right)$$
-$$IV = \sum_{i=1}^{N} (\% \text{Events}_i - \% \text{Non-Events}_i) \times WOE_i$$
+$$WOE_i = \ln\left(\frac{P(\text{Event}_i)}{P(\text{Non-Event}_i)}\right)$$
+$$IV = \sum_{i=1}^{N} \left(P(\text{Event}_i) - P(\text{Non-Event}_i)\right) \times WOE_i$$
 
 ### Credit Scorecard Conversion
-$$\text{Score} = \text{Offset} + \text{Factor} \times \sum(\beta_i \times WOE_i)$$
+$$\text{Score} = \text{Offset} + \text{Factor} \times \sum_{i=1}^{p} (\beta_i \times WOE_i)$$
 Where: $\text{Factor} = \frac{PDO}{\ln(2)}$, $\text{Offset} = \text{TargetScore} - \text{Factor} \times \ln(\text{TargetOdds})$
 
 ### KS Statistic
-$$KS = \max_s |F_{\text{good}}(s) - F_{\text{bad}}(s)|$$
+$$KS = \max_s \left| F_{\text{good}}(s) - F_{\text{bad}}(s) \right|$$
 
 ### Population Stability Index (PSI)
-$$PSI = \sum_{i=1}^{N} (\%\text{Actual}_i - \%\text{Expected}_i) \times \ln\left(\frac{\%\text{Actual}_i}{\%\text{Expected}_i}\right)$$
+$$PSI = \sum_{i=1}^{N} \left(P(\text{Actual}_i) - P(\text{Expected}_i)\right) \times \ln\left(\frac{P(\text{Actual}_i)}{P(\text{Expected}_i)}\right)$$
 
 ## 🧪 Model Validation Framework
 
