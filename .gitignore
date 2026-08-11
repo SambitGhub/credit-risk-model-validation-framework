@@ -1,0 +1,25 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+venv/
+env/
+ENV/
+.venv
+
+# Data files (raw large CSVs should not be pushed to GitHub)
+data/raw/*.csv
+data/processed/*.csv
+!data/raw/README.md
+
+# Large model artifacts (joblib/pickle)
+outputs/models/*.joblib
+!outputs/models/.gitkeep
+
+# IDE / OS specific files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
