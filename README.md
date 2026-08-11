@@ -38,23 +38,23 @@ This project builds an end-to-end credit risk modeling system that goes far beyo
 credit-risk-model-validation/
 ├── README.md
 ├── requirements.txt
-├── run_pipeline.py              # End-to-end pipeline runner
+├── run_pipeline.py              
 ├── data/
-│   ├── raw/                     # Raw CSV dataset
-│   └── processed/               # Cleaned splits
+│   ├── raw/                   
+│   └── processed/            
 ├── src/
-│   ├── config.py                # Central configuration
-│   ├── data_loader.py           # Data loading & quality reporting
-│   ├── preprocessing.py         # Imputation, outlier capping, splits
-│   ├── feature_engineering.py   # WOE/IV binning & transformation
-│   ├── models.py                # Champion scorecard & challengers
-│   ├── validation.py            # Discrimination, calibration, stability
-│   ├── stress_testing.py        # Macroeconomic scenario analysis
-│   ├── explainability.py        # SHAP explanations
-│   └── utils.py                 # Shared plotting & metric helpers
+│   ├── config.py               
+│   ├── data_loader.py       
+│   ├── preprocessing.py       
+│   ├── feature_engineering.py  
+│   ├── models.py               
+│   ├── validation.py        
+│   ├── stress_testing.py       
+│   ├── explainability.py      
+│   └── utils.py           
 ├── outputs/
-│   ├── figures/                 # Generated plots
-│   └── models/                  # Saved model artifacts
+│   ├── figures/               
+│   └── models/             
 └── reports/
     └── model_validation_report.md
 ```
